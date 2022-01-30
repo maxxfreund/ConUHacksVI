@@ -36,6 +36,9 @@ def guessLetter(lmList):
     # Case R
     if lmList[8][1] < lmList[12][1] and lmList[4][1] < lmList[5][1]:
         asciiCode = 82
+        # Case S
+    elif lmList[8][2] > lmList[5][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] < lmList[10][1] and lmList[4][2] < lmList[10][2]:
+        asciiCode = 83
     # Case A
     elif lmList[8][2] > lmList[5][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][
         2] > lmList[17][2] and lmList[4][1] > lmList[5][1]:
@@ -57,23 +60,18 @@ def guessLetter(lmList):
 
     # Case N
     elif lmList[8][2] > lmList[5][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] < lmList[5][1] and lmList[4][2] < lmList[13][2]:
-        asciiCode = 78
+        if lmList[4][1] > lmList[9][1]:
+            asciiCode = 84
+        elif lmList[4][1] < lmList[13][1]:
+            asciiCode = 77
+        else:
+            asciiCode = 78
 
+    # to do
     # Case O
     elif lmList[8][2] > lmList[7][2] and lmList[12][2] > lmList[11][2] and lmList[16][2] > lmList[15][2] and lmList[20][2] > lmList[19][2] and lmList[4][1] < lmList[5][1]:
         asciiCode = 79
 
-    # Case M
-    # Case S
-    elif lmList[8][2] > lmList[7][2] and lmList[12][2] > lmList[11][2] and lmList[16][2] > lmList[13][2] and lmList[20][
-        2] > lmList[17][2] and lmList[4][1] < lmList[9][1]:
-        asciiCode = 83
-
-
-
-    # Case T
-    elif lmList[8][2] > lmList[7][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] < lmList[5][1]:
-        asciiCode = 84
 
     # Case P
     elif lmList[8][2] > lmList[5][2] and lmList[12][2] > lmList[0][2] and lmList[14][2] > lmList[13][2] and lmList[18][
@@ -86,11 +84,13 @@ def guessLetter(lmList):
         asciiCode = 81
 
 
-    elif lmList[8][1] > lmList[4][1] and lmList[10][1] > lmList[9][1] > lmList[12][1]:
+    elif lmList[8][1] > lmList[4][1] and lmList[10][1] > lmList[9][1]:
         if lmList[12][1] > lmList[4][1]:
             asciiCode = 72 # Case H
         else:
             asciiCode = 71 # Case G
+
+
     # Case J
     elif lmList[8][2] > lmList[5][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][
         2] < lmList[17][2] and lmList[4][1] > lmList[5][1]:
