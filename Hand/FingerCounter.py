@@ -113,7 +113,6 @@ def guessLetter(lmList):
 
     # Case K, V, U
     elif lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] < lmList[5][1]:
-        print("hit")
         if (lmList[8][2] < lmList[5][2]) and lmList[12][2] < lmList[9][2] and lmList[4][2] < lmList[5][2]:
             asciiCode = 75 #k
         elif lmList[5][1] < lmList[8][1] and lmList[12][1] < lmList[9][1]:
@@ -167,6 +166,22 @@ def main():
 
     detector = htm.handDetector(detectionCon=0.75)
     text = chooseWord()
+    letter_list = []
+    guess_list = []
+
+    word = str(text).upper()
+    print("Word",word)
+    # print("len",len(word))
+    display_list = []
+    for i in range(len(word)):
+        display_list.append("_")
+    a = " ".join(display_list)
+
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    org = (700, 80)
+    fontScale = 2
+    color = (0, 0, 255)
+    thickness = 1
     while True:
         success, img = cap.read()
         img = detector.findHands(img)
@@ -176,32 +191,50 @@ def main():
         if len(lmList) != 0:
             # totalFingers = countFin(lmList)
 
-            asciiLetter = guessLetter(lmList)
+            asciiNum = guessLetter(lmList)
+            asciiLetter = str(chr(asciiNum))
+            letter_list.append(asciiLetter)
+            if letter_list.count(asciiLetter) > 75:
+                letter_list.clear()
+                guess_list.append(asciiLetter)
+                print(asciiLetter)
+                print("count", word.count(asciiLetter))
+                if word.count(asciiLetter) == 1:
+                    print("hit")
+                    index = word.find(asciiLetter)
+                    display_list[index] = asciiLetter
+                    a = " ".join(display_list)
 
-            print("ascii",asciiLetter)
-            h, w, c = overlayList[asciiLetter - 65].shape  # images
-            img[0:h, 0:w] = overlayList[asciiLetter - 65]
+                    cv2.putText(img, a, org, font, fontScale, color, thickness, cv2.LINE_AA)
+                elif word.count(asciiLetter) > 1:
+                    print("more hit")
+                    for i in range(len(word)):
+                        index = word.find(asciiLetter,i)
+                        display_list[index] = asciiLetter
+                        a = " ".join(display_list)
+                        cv2.putText(img, a, org, font, fontScale, color, thickness, cv2.LINE_AA)
+                else:
+                    print("Wrong Letter!")
+
+
+            h, w, c = overlayList[asciiNum - 65].shape  # images
+            img[0:h, 0:w] = overlayList[asciiNum - 65]
+
 
 
         # Nelly
-        word = text
-        letters = list(word)
-        font = cv2.FONT_HERSHEY_SIMPLEX
-        org = (950, 80)
-        fontScale = 2
-        color = (0, 0, 255)
-        thickness = 2
-        cv2.putText(img, text, org, font, fontScale, color, thickness, cv2.LINE_AA)
+
+
+        cv2.putText(img, a, org, font, fontScale, color, thickness, cv2.LINE_AA)
 
 
         cTime = time.time()
         fps = 1 / (cTime - pTime)
         pTime = cTime
 
-        cv2.putText(img, f'FPS: {int(fps)}', (400, 70), cv2.FONT_HERSHEY_PLAIN, 3, (255, 0, 0), 3)
-
         cv2.imshow("Image", img)
         cv2.waitKey(1)
+
 
 
 if __name__ == "__main__":
