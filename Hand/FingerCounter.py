@@ -34,59 +34,84 @@ def guessLetter(lmList):
     asciiCode = 0
 
     # Case A
-    if lmList[8][2] > lmList[5][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] > lmList[5][1]:
+    if lmList[8][2] > lmList[5][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][
+        2] > lmList[17][2] and lmList[4][1] > lmList[5][1]:
         asciiCode = 65
 
-    #Case B
-    elif lmList[8][2] < lmList[5][2] and lmList[12][2] < lmList[9][2] and lmList[16][2] < lmList[13][2] and lmList[20][2] < lmList[17][2] and lmList[4][1] < lmList[5][1]:
+    # Case B
+    elif lmList[8][2] < lmList[5][2] and lmList[12][2] < lmList[9][2] and lmList[16][2] < lmList[13][2] and lmList[20][
+        2] < lmList[17][2] and lmList[4][1] < lmList[5][1]:
         asciiCode = 66
 
-    #Case C
-    elif lmList[8][2] > lmList[7][2] and lmList[12][2] > lmList[11][2] and lmList[16][2] > lmList[15][2] and lmList[20][2] > lmList[19][2] and lmList[4][1] < lmList[3][1]:
+    # Case C
+    elif lmList[8][2] > lmList[7][2] and lmList[12][2] > lmList[11][2] and lmList[16][2] > lmList[15][2] and lmList[20][
+        2] > lmList[19][2] and lmList[4][1] < lmList[3][1]:
         asciiCode = 67
 
-    #Case D
-    elif lmList[8][2] < lmList[5][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] < lmList[5][1]:
+    # Case D
+    elif lmList[8][2] < lmList[5][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][
+        2] > lmList[17][2] and lmList[4][1] < lmList[5][1]:
         asciiCode = 68
 
-    #Case E
-    elif lmList[8][2] > lmList[5][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] < lmList[5][1]:
+    # Case E
+    elif lmList[8][2] > lmList[5][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][
+        2] > lmList[17][2] and lmList[4][1] < lmList[5][1]:
         asciiCode = 69
 
     # Case F
-    elif lmList[8][2] > lmList[5][2] and lmList[12][2] < lmList[9][2] and lmList[16][2] < lmList[13][2] and lmList[20][2] < lmList[17][2] and lmList[4][1] < lmList[5][1]:
+    elif lmList[8][2] > lmList[5][2] and lmList[12][2] < lmList[9][2] and lmList[16][2] < lmList[13][2] and lmList[20][
+        2] < lmList[17][2] and lmList[4][1] < lmList[5][1]:
         asciiCode = 70
 
     # Case G
     # Case H
     # Case I
-    elif lmList[8][2] > lmList[5][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][2] < lmList[17][2] and lmList[4][1] < lmList[5][1]:
+    elif lmList[8][2] > lmList[5][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][
+        2] < lmList[17][2] and lmList[4][1] < lmList[5][1]:
         asciiCode = 73
 
     # Case J
-    # Case K
-    elif lmList[8][2] < lmList[5][2] and lmList[12][2] < lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] < lmList[5][1]:
-        asciiCode = 75
+
+    # Case K, V, U
+    elif lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2]:
+        print("hit")
+        if (lmList[8][2] < lmList[5][2]) and lmList[12][2] < lmList[9][2] and lmList[4][2] < lmList[5][2]:
+            asciiCode = 75 #k
+        elif lmList[5][1] < lmList[8][1] and lmList[12][1] < lmList[9][1]:
+            asciiCode = 86 #v
+        else:
+            asciiCode = 85 #u
+
+
+
+
+
 
     # Case L
-    elif lmList[8][2] < lmList[5][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] > lmList[5][1]:
+    elif lmList[8][2] < lmList[5][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][
+        2] > lmList[17][2] and lmList[4][1] > lmList[5][1]:
         asciiCode = 76
-        
+
+
     # Case M
     # Case N
-    elif lmList[8][2] > lmList[7][2] and lmList[12][2] > lmList[11][2] and lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] < lmList[9][1]:
+    elif lmList[8][2] > lmList[7][2] and lmList[12][2] > lmList[11][2] and lmList[16][2] > lmList[13][2] and lmList[20][
+        2] > lmList[17][2] and lmList[4][1] < lmList[9][1]:
         asciiCode = 78
 
     # Case O
-    elif lmList[8][2] > lmList[7][2] and lmList[12][2] > lmList[11][2] and lmList[16][2] > lmList[15][2] and lmList[20][2] > lmList[19][2] and lmList[4][1] < lmList[5][1]:
+    elif lmList[8][2] > lmList[7][2] and lmList[12][2] > lmList[11][2] and lmList[16][2] > lmList[15][2] and lmList[20][
+        2] > lmList[19][2] and lmList[4][1] < lmList[5][1]:
         asciiCode = 79
 
     # Case P
-    elif lmList[8][2] > lmList[5][2] and lmList[12][2] > lmList[0][2] and lmList[14][2] > lmList[13][2] and lmList[18][2] > lmList[17][2] and lmList[4][1] < lmList[2][1]:
+    elif lmList[8][2] > lmList[5][2] and lmList[12][2] > lmList[0][2] and lmList[14][2] > lmList[13][2] and lmList[18][
+        2] > lmList[17][2] and lmList[4][1] < lmList[2][1]:
         asciiCode = 80
 
     # Case Q
-    elif lmList[8][2] > lmList[0][2] and lmList[10][2] > lmList[9][2] and lmList[14][2] > lmList[13][2] and lmList[18][2] > lmList[17][2] and lmList[4][2] > lmList[0][2]:
+    elif lmList[8][2] > lmList[0][2] and lmList[10][2] > lmList[9][2] and lmList[14][2] > lmList[13][2] and lmList[18][
+        2] > lmList[17][2] and lmList[4][2] > lmList[0][2]:
         asciiCode = 81
 
     # Case R
@@ -94,37 +119,36 @@ def guessLetter(lmList):
         asciiCode = 82
 
     # Case S
-    elif lmList[8][2] > lmList[5][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] < lmList[5][1] and lmList[4][2] < lmList[13][2]:
+    elif lmList[8][2] > lmList[5][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][
+        2] > lmList[17][2] and lmList[4][1] < lmList[5][1] and lmList[4][2] < lmList[13][2]:
         asciiCode = 83
 
     # Case T
-    elif lmList[8][2] > lmList[7][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] < lmList[5][1]:
+    elif lmList[8][2] > lmList[7][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][
+        2] > lmList[17][2] and lmList[4][1] < lmList[5][1]:
         asciiCode = 84
 
-    # Case U
-    elif lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] < lmList[5][1]:
-        asciiCode = 85
 
-    # Case V
-    elif lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] < lmList[5][1] < lmList[8][1] and lmList[12][1] < lmList[9][1]:
-        asciiCode = 86
 
     # Case W
-    elif lmList[8][2] < lmList[7][2] and lmList[12][2] < lmList[11][2] and lmList[16][2] < lmList[15][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] < lmList[5][1]:
+    elif lmList[8][2] < lmList[7][2] and lmList[12][2] < lmList[11][2] and lmList[16][2] < lmList[15][2] and lmList[20][
+        2] > lmList[17][2] and lmList[4][1] < lmList[5][1]:
         asciiCode = 87
 
     # Case X
-    elif lmList[8][2] > lmList[7][2] and lmList[8][1] > lmList[7][1] and lmList[10][1] > lmList[9][1] and lmList[14][1] > lmList[13][1] and lmList[18][1] > lmList[17][1]:
+    elif lmList[8][2] > lmList[7][2] and lmList[8][1] > lmList[7][1] and lmList[10][1] > lmList[9][1] and lmList[14][
+        1] > lmList[13][1] and lmList[18][1] > lmList[17][1]:
         asciiCode = 88
 
     # Case Y
-    elif lmList[20][1] < lmList[17][1] and lmList[4][1] > lmList[5][1] and lmList[8][2] < lmList[5][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2]:
+    elif lmList[20][1] < lmList[17][1] and lmList[4][1] > lmList[5][1] and lmList[8][2] < lmList[5][2] and lmList[12][
+        2] > lmList[9][2] and lmList[16][2] > lmList[13][2]:
         asciiCode = 89
 
-    #Case Z
+    # Case Z
     else:
         asciiCode = 90
-    
+
     return asciiCode
 
 
@@ -152,13 +176,14 @@ def main():
         success, img = cap.read()
         img = detector.findHands(img)
         lmList = detector.findPosition(img, draw=False)  # list of all positions
-        print(lmList)
+        #print(lmList)
 
         if len(lmList) != 0:
             # totalFingers = countFin(lmList)
 
             asciiLetter = guessLetter(lmList)
 
+            print("ascii",asciiLetter)
             h, w, c = overlayList[asciiLetter - 65].shape  # images
             img[0:h, 0:w] = overlayList[asciiLetter - 65]
 
