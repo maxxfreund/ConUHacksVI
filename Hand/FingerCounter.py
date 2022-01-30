@@ -71,28 +71,60 @@ def guessLetter(lmList):
     # Case L
     elif lmList[8][2] < lmList[5][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] > lmList[5][1]:
         asciiCode = 76
+        
+    # Case M
+    # Case N
+    elif lmList[8][2] > lmList[7][2] and lmList[12][2] > lmList[11][2] and lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] < lmList[9][1]:
+        asciiCode = 78
 
-    # Case E
-    # Case E
-    # Case E
-    # Case E
-    # Case E
-    # Case E
-    # Case E
-    # Case E
-    # Case E
-    # Case E
-    # Case E
-    # Case E
-    # Case E
-    # Case E
+    # Case O
+    elif lmList[8][2] > lmList[7][2] and lmList[12][2] > lmList[11][2] and lmList[16][2] > lmList[15][2] and lmList[20][2] > lmList[19][2] and lmList[4][1] < lmList[5][1]:
+        asciiCode = 79
 
+    # Case P
+    elif lmList[8][2] > lmList[5][2] and lmList[12][2] > lmList[0][2] and lmList[14][2] > lmList[13][2] and lmList[18][2] > lmList[17][2] and lmList[4][1] < lmList[2][1]:
+        asciiCode = 80
 
+    # Case Q
+    elif lmList[8][2] > lmList[0][2] and lmList[10][2] > lmList[9][2] and lmList[14][2] > lmList[13][2] and lmList[18][2] > lmList[17][2] and lmList[4][2] > lmList[0][2]:
+        asciiCode = 81
 
+    # Case R
+    elif lmList[8][1] < lmList[12][1] and lmList[4][1] < lmList[5][1]:
+        asciiCode = 82
+
+    # Case S
+    elif lmList[8][2] > lmList[5][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] < lmList[5][1] and lmList[4][2] < lmList[13][2]:
+        asciiCode = 83
+
+    # Case T
+    elif lmList[8][2] > lmList[7][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] < lmList[5][1]:
+        asciiCode = 84
+
+    # Case U
+    elif lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] < lmList[5][1]:
+        asciiCode = 85
+
+    # Case V
+    elif lmList[16][2] > lmList[13][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] < lmList[5][1] < lmList[8][1] and lmList[12][1] < lmList[9][1]:
+        asciiCode = 86
+
+    # Case W
+    elif lmList[8][2] < lmList[7][2] and lmList[12][2] < lmList[11][2] and lmList[16][2] < lmList[15][2] and lmList[20][2] > lmList[17][2] and lmList[4][1] < lmList[5][1]:
+        asciiCode = 87
+
+    # Case X
+    elif lmList[8][2] > lmList[7][2] and lmList[8][1] > lmList[7][1] and lmList[10][1] > lmList[9][1] and lmList[14][1] > lmList[13][1] and lmList[18][1] > lmList[17][1]:
+        asciiCode = 88
+
+    # Case Y
+    elif lmList[20][1] < lmList[17][1] and lmList[4][1] > lmList[5][1] and lmList[8][2] < lmList[5][2] and lmList[12][2] > lmList[9][2] and lmList[16][2] > lmList[13][2]:
+        asciiCode = 89
 
     #Case Z
     else:
-        asciiCode = 64
+        asciiCode = 90
+    
     return asciiCode
 
 
