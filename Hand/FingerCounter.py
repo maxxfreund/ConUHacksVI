@@ -167,7 +167,7 @@ def main():
     detector = htm.handDetector(detectionCon=0.75)
     text = chooseWord()
     while True:
-        if len(text) > 4:
+        if len(text) > 7:
             text = chooseWord()
         else:
             break
