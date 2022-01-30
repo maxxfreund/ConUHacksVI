@@ -171,6 +171,17 @@ def main():
 
         cv2.putText(img, f'FPS: {int(fps)}', (400, 70), cv2.FONT_HERSHEY_PLAIN, 3, (255, 0, 0), 3)
 
+        #Nelly
+        text = "Add the text variable here!"
+        font = cv2.FONT_HERSHEY_SIMPLEX
+        org = (300, 400)
+        fontScale = 1
+        color = (0, 0, 255)
+        thickness = 2
+
+        cv2.putText(img, text, org, font, fontScale, color, thickness, cv2.LINE_AA)
+        #Nelly
+
         cv2.imshow("Image", img)
         cv2.waitKey(1)
 
