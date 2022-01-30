@@ -166,6 +166,11 @@ def main():
 
     detector = htm.handDetector(detectionCon=0.75)
     text = chooseWord()
+    while True:
+        if len(text) > 4:
+            text = chooseWord()
+        else:
+            break
     letter_list = []
     guess_list = []
 
@@ -204,20 +209,20 @@ def main():
             if letter_list.count(asciiLetter) > 75:
                 letter_list.clear()
                 guess_list.append(asciiLetter)
-                print(asciiLetter)
-                print("count", word.count(asciiLetter))
+                # print(asciiLetter)
+                # print("count", word.count(asciiLetter))
                 if word.count(asciiLetter) == 1:
-                    print("hit")
+                    print("Wapow!")
                     index = word.find(asciiLetter)
                     display_list[index] = asciiLetter
                     a = " ".join(display_list)
 
                     cv2.putText(img, a, org, font, fontScale, color, thickness, cv2.LINE_AA)
                 elif word.count(asciiLetter) > 1:
-                    print("more hit")
-                    for i in range(len(word)):
+                    print("Critical hit!")
+                    for i in range(len(word) - 1):
                         if word[i] == asciiLetter:
-                            display_list[index] = asciiLetter
+                            display_list[i] = asciiLetter
                             a = " ".join(display_list)
                             cv2.putText(img, a, org, font, fontScale, color, thickness, cv2.LINE_AA)
                 else:
