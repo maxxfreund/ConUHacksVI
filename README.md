@@ -14,4 +14,4 @@ There is a very small chance that these words are randomly chosen to play the ga
 Thanks for understanding.
 
 
-TL;DR - Bad words might show up, yikes
+TL;DR - Bad words might show up, yikes 
